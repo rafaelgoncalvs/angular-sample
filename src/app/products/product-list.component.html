@@ -1,0 +1,25 @@
+<div>
+      <h1>Titulo: {{description}}</h1>
+      <table *ngIf='products && products.length'>
+            <thead>
+                  <tr>
+                  <th><button>Show Image</button></th>
+                  <th>Product</th>
+                  <th>Code</th>
+                  <th>Available</th>
+                  <th>Price</th>
+                  <th>5 Star Rating</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor='let product of products'>
+                        <td><img src="{{product.imageUrl}}" alt=""></td>
+                        <td>{{ product.productName }}</td>
+                        <td>{{ product.productCode }}</td>
+                        <td>{{ product.releaseDate }}</td>
+                        <td>{{ product.price | currency:'USD':true:'1.2-2'}}</td>
+                        <td>{{ product.starRating }}</td>
+                  </tr>
+            </tbody>
+      </table>
+</div>
